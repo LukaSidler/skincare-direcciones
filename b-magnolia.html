@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dirección B · Magnolia — Skin Care Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:ital,wght@0,300..700;1,300..500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --magnolia: #F6F1F0;
+    --petal: #E9D6D2;
+    --stone: #8B7F79;
+    --char: #2B2523;
+    --olive: #6F7659;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    font-family: "Karla", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.6;
+    color: var(--char); background: var(--magnolia);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; }
+  .serif { font-family: "Libre Caslon Display", Georgia, serif; font-weight: 400; }
+  .wrap { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
+
+  header { padding: 1.4rem 0; }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .name { font-family: "Libre Caslon Display", serif; font-size: 1.35rem; text-decoration: none; }
+  .link { font-weight: 500; text-underline-offset: .3em; text-decoration-thickness: 1px; }
+
+  /* Hero: arco + titular grande */
+  .hero { padding: 1rem 0 4rem; }
+  .hero .wrap { display: grid; gap: 2rem; }
+  .arch {
+    aspect-ratio: 3/4; border-radius: 999px 999px 0 0; overflow: hidden;
+    background:
+      radial-gradient(60% 40% at 30% 30%, #fff8 0, transparent 70%),
+      linear-gradient(170deg, var(--petal), #D7C4BF 70%, #C9B5AF);
+    display: grid; place-items: end center; padding-bottom: 1.25rem;
+    color: var(--stone); font-size: .85rem; width: min(100%, 26rem); justify-self: center;
+    order: 2; max-height: 60vh;
+  }
+  h1 { font-size: clamp(2.6rem, 11vw, 5.2rem); line-height: .98; letter-spacing: -.01em; }
+  .hero p { margin-top: 1.25rem; max-width: 34ch; font-size: 1.15rem; color: #5A4F4B; }
+  .cta {
+    display: inline-block; margin-top: 2rem; padding: 1rem 1.6rem; border-radius: 999px;
+    background: var(--char); color: var(--magnolia); text-decoration: none; font-weight: 500;
+  }
+
+  /* Cita propia */
+  .quote { padding: 5rem 0; background: var(--petal); }
+  .quote blockquote { font-size: clamp(1.9rem, 7vw, 3.4rem); line-height: 1.1; max-width: 18ch; }
+  .quote figcaption { margin-top: 1.5rem; color: #5A4F4B; max-width: 40ch; }
+
+  /* Scroll */
+  .scrolly .track { height: 330vh; }
+  .scrolly .stick { position: sticky; top: 0; height: 100vh; display: grid; align-content: center; }
+  .scrolly .grid { display: grid; gap: 1rem; justify-items: center; text-align: center; }
+  .kicker { color: var(--olive); font-weight: 500; }
+  .face { width: min(64vw, 290px); overflow: visible; }
+  .face .ln { fill: none; stroke: var(--stone); stroke-width: 1; stroke-linecap: round; }
+  .face .glow { fill: url(#bGlow); }
+  .caption { position: relative; min-height: 8.5rem; width: min(100%, 30rem); }
+  .caption div { position: absolute; inset: 0; opacity: 0; transition: opacity .5s; }
+  .caption div.on { opacity: 1; }
+  .caption h3 { font-size: 2rem; line-height: 1.1; }
+  .caption p { margin-top: .5rem; color: #5A4F4B; }
+
+  /* Tratamientos como lista desplegable */
+  .treat { padding: 5rem 0; }
+  .treat h2 { font-size: clamp(2.2rem, 8vw, 3.6rem); line-height: 1; }
+  .treat .intro { margin-top: 1rem; max-width: 44ch; color: #5A4F4B; }
+  .list { margin-top: 2.5rem; border-top: 1px solid #D6C8C3; }
+  details { border-bottom: 1px solid #D6C8C3; }
+  summary {
+    list-style: none; cursor: pointer; padding: 1.2rem 0;
+    display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: baseline;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary .t { font-family: "Libre Caslon Display", serif; font-size: 1.5rem; line-height: 1.15; }
+  summary .p { color: var(--stone); white-space: nowrap; }
+  details .body { padding: 0 0 1.4rem; max-width: 56ch; color: #5A4F4B; }
+  details .body .for { margin-top: .6rem; color: var(--olive); font-weight: 500; }
+  details[open] summary .t { color: var(--olive); }
+
+  /* Sobre Norma */
+  .about { padding: 5rem 0; background: var(--char); color: var(--magnolia); }
+  .about .wrap { display: grid; gap: 2rem; }
+  .about h2 { font-size: clamp(2.2rem, 8vw, 3.6rem); line-height: 1; }
+  .about p { margin-top: 1rem; max-width: 46ch; color: #D8CDCA; }
+  .pillars { margin-top: 2rem; display: grid; gap: 1.5rem; }
+  .pillars h3 { font-family: "Libre Caslon Display", serif; font-size: 1.35rem; color: var(--petal); }
+  .pillars p { margin-top: .25rem; }
+
+  .book { padding: 5rem 0 3rem; text-align: center; }
+  .book h2 { font-size: clamp(2.4rem, 9vw, 4rem); line-height: 1; }
+  .book p { margin: 1rem auto 0; max-width: 38ch; color: #5A4F4B; }
+  footer { padding: 3rem 0; text-align: center; color: var(--stone); font-size: .9rem; }
+
+  @media (min-width: 860px) {
+    .hero .wrap { grid-template-columns: 1.2fr .8fr; align-items: center; }
+    .hero .arch { max-height: none; }
+    .scrolly .grid { grid-template-columns: 1fr 1fr; text-align: left; justify-items: start; align-items: center; }
+    .face { width: 340px; justify-self: center; }
+    .about .wrap { grid-template-columns: 1fr 1fr; }
+    .pillars { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="name" href="#">Norma Nicola</a>
+    <a class="link" href="#turnos">Pedir turno</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="arch">Foto: Norma en su consultorio</div>
+      <div>
+        <h1 class="serif">Un espacio para vos y tu piel.</h1>
+        <p>Soy Norma, dermatocosmiatra en Villa María. Te recibo en mi consultorio, miro tu piel con tiempo y armamos juntas el tratamiento.</p>
+        <a class="cta" href="#turnos">Pedir turno</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <figure class="wrap">
+      <blockquote class="serif">Un activo mal utilizado puede dañar tu piel.</blockquote>
+      <figcaption>Por eso no hay tratamiento de catálogo: primero conocemos tu piel y después elegimos qué usar, cuánto y cada cuánto.</figcaption>
+    </figure>
+  </section>
+
+  <section class="scrolly" aria-label="Cómo es una sesión de crio radiofrecuencia">
+    <div class="track">
+      <div class="stick">
+        <div class="wrap grid">
+          <svg class="face" viewBox="0 0 200 260" role="img" aria-label="El cabezal recorre frente, pómulo y mentón">
+            <defs>
+              <radialGradient id="bGlow"><stop offset="0" stop-color="#E4B9B0" stop-opacity=".9"/><stop offset="1" stop-color="#E4B9B0" stop-opacity="0"/></radialGradient>
+            </defs>
+            <path class="ln" d="M100 18C152 18 172 62 170 116C168 172 144 226 100 242C56 226 32 172 30 116C28 62 48 18 100 18Z"/>
+            <path class="ln" d="M60 98q14-8 28 0M112 98q14-8 28 0M64 118q10 6 20 0M116 118q10 6 20 0M100 124c-2 16-6 26-9 32q9 5 18 0M82 190q18 10 36 0"/>
+            <path id="bPath" d="M66 70C88 54 118 54 136 70C156 96 154 128 140 150C128 176 116 204 100 216" fill="none"/>
+            <g id="bHead">
+              <circle class="glow" r="30"><animate attributeName="r" values="22;34;22" dur="2.4s" repeatCount="indefinite"/></circle>
+              <circle r="7" fill="var(--magnolia)" stroke="var(--char)" stroke-width="1.2"/>
+            </g>
+          </svg>
+          <div>
+            <p class="kicker">Así es una sesión de crio radiofrecuencia</p>
+            <div class="caption" id="bCap">
+              <div><h3 class="serif">Frente</h3><p>El cabezal se desliza despacio. Sentís calor suave, nunca quema.</p></div>
+              <div><h3 class="serif">Pómulo</h3><p>El calor llega a capas profundas y la piel empieza a fabricar colágeno y elastina.</p></div>
+              <div><h3 class="serif">Mentón y óvalo</h3><p>Al final, el frío genera un choque térmico que tensa el contorno al instante.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="treat" id="tratamientos">
+    <div class="wrap">
+      <h2 class="serif">Tratamientos</h2>
+      <p class="intro">Sesiones de una hora. Tocá cada uno para ver qué incluye y para qué sirve.</p>
+      <div class="list">
+        <details><summary><span class="t">Higiene facial profesional</span><span class="p">$60.000</span></summary>
+          <div class="body">Microdermoabrasión, máscara enzimática, extracciones, shock de activos y ozonoterapia.<p class="for">Para empezar, o para mantener la piel limpia e iluminada.</p></div></details>
+        <details><summary><span class="t">Higiene con dermaplaning</span><span class="p">$70.000</span></summary>
+          <div class="body">Exfoliación con bisturí que retira células muertas y vello fino. No engrosa el vello ni lo hace crecer más.<p class="for">Para una piel muy suave y un maquillaje que se asiente mejor.</p></div></details>
+        <details><summary><span class="t">Crio radiofrecuencia</span><span class="p">$75.000</span></summary>
+          <div class="body">Calor interno y frío en la misma sesión. El choque térmico tensa al instante.<p class="for">Para flacidez y el contorno del óvalo facial.</p></div></details>
+        <details><summary><span class="t">Yellow peel</span><span class="p">$70.000</span></summary>
+          <div class="body">Peeling de descamación intensa con ácido retinoico, con máscara queratolítica previa.<p class="for">Para manchas y textura irregular.</p></div></details>
+        <details><summary><span class="t">Terapia fotoluminiscente</span><span class="p">$70.000</span></summary>
+          <div class="body">Cada color de luz tiene un efecto distinto; se elige según tu piel.<p class="for">Para acné, manchas, pieles sensibles o reactivas.</p></div></details>
+        <details><summary><span class="t">Programa Biotech Fusion</span><span class="p">$85.000</span></summary>
+          <div class="body">Exosomas, PDRN y péptidos aplicados con dermapen. Trabajan juntos para reparar y regenerar.<p class="for">Para arrugas, líneas de expresión y piel apagada.</p></div></details>
+        <details><summary><span class="t">Radiofrecuencia Frax + exosomas</span><span class="p">$100.000</span></summary>
+          <div class="body">Radiofrecuencia fraccionada no ablativa más exosomas regeneradores.<p class="for">Para firmeza, hidratación y luminosidad.</p></div></details>
+        <details><summary><span class="t">Booster PDRN (Suvanza)</span><span class="p">$110.000</span></summary>
+          <div class="body">PDRN de salmón con microneedling y dermapen.<p class="for">Para mejorar la textura y la firmeza.</p></div></details>
+      </div>
+      <p class="intro" style="margin-top:1.5rem"><a class="link" href="#">Ver los 15 tratamientos</a></p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div>
+        <h2 class="serif">Crecer para brindar siempre lo mejor.</h2>
+        <p>Atiendo en Villa María y también en Paraguay. Me sigo formando cada año, y en Instagram comparto lo que aprendo: mitos, activos y qué conviene para cada piel.</p>
+      </div>
+      <div class="pillars">
+        <div><h3>Un lugar exclusivo</h3><p>Un consultorio tranquilo, un turno a la vez.</p></div>
+        <div><h3>Atención personalizada</h3><p>Cada tratamiento se ajusta a tu biotipo y fototipo.</p></div>
+        <div><h3>Formación permanente</h3><p>Técnicas y activos actualizados, con criterio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="turnos">
+    <div class="wrap">
+      <h2 class="serif">Reservá tu momento</h2>
+      <p>Contame qué tratamiento te interesa y qué días podés. Te respondo por WhatsApp para confirmar el horario.</p>
+      <a class="cta" href="#">Pedir turno</a>
+    </div>
+  </section>
+</main>
+
+<footer>Skin Care Solutions · Villa María, Córdoba · <a href="https://www.instagram.com/nicola_norma/">@nicola_norma</a></footer>
+
+<script>
+  const track = document.querySelector('.scrolly .track');
+  const path = document.getElementById('bPath');
+  const head = document.getElementById('bHead');
+  const caps = document.querySelectorAll('#bCap div');
+  const len = path.getTotalLength();
+  function update() {
+    const r = track.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+    const pt = path.getPointAtLength(p * len);
+    head.setAttribute('transform', `translate(${pt.x} ${pt.y})`);
+    const z = pt.y < 112 ? 0 : pt.y < 180 ? 1 : 2; // zona según dónde está el cabezal
+    caps.forEach((el, i) => el.classList.toggle('on', i === z));
+  }
+  addEventListener('scroll', update, { passive: true }); update();
+</script>
+</body>
+</html>
