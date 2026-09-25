@@ -17,24 +17,35 @@
   figcaption span { color: #555; font-size: .9rem; }
   iframe { width: 390px; height: 780px; border: 0; border-radius: 28px; background: #fff; box-shadow: 0 0 0 10px #1c1c1c; }
   a { color: inherit; }
+  .hint-mobile { display: none; }
+  @media (max-width: 700px) {
+    header { padding: 1.5rem 1.25rem .5rem; }
+    .hint-desk, iframe { display: none; }
+    .hint-mobile { display: block; }
+    .row { flex-direction: column; gap: .75rem; padding: 1rem 1.25rem 3rem; }
+    figcaption { margin: 0; }
+    figcaption a { display: block; padding: 1.1rem 1.2rem; background: #fff; border-radius: 14px; text-decoration: none; }
+    figcaption b { font-size: 1.15rem; }
+  }
 </style>
 </head>
 <body>
 <header>
   <h1>Tres direcciones, vista celular</h1>
-  <p>Scrolleá dentro de cada teléfono. Tocá el título para abrirla en pantalla completa.</p>
+  <p class="hint-desk">Scrolleá dentro de cada teléfono. Tocá el título para abrirla en pantalla completa.</p>
+  <p class="hint-mobile">Tocá cada una para verla. Después volvé para ver la siguiente.</p>
 </header>
 <div class="row">
   <figure>
-    <figcaption><b><a href="a-protocolo.html">A · Protocolo</a></b><span>Clínica y precisa. Sus protocolos como protagonistas.</span></figcaption>
+    <figcaption><a href="a-protocolo.html"><b>A · Protocolo</b><span>Clínica y precisa. Sus protocolos como protagonistas.</span></a></figcaption>
     <iframe src="a-protocolo.html" title="Dirección A"></iframe>
   </figure>
   <figure>
-    <figcaption><b><a href="b-magnolia.html">B · Magnolia</a></b><span>Cálida y personal. Habla ella, en primera persona.</span></figcaption>
+    <figcaption><a href="b-magnolia.html"><b>B · Magnolia</b><span>Cálida y personal. Habla ella, en primera persona.</span></a></figcaption>
     <iframe src="b-magnolia.html" title="Dirección B"></iframe>
   </figure>
   <figure>
-    <figcaption><b><a href="c-nn.html">C · N/N</a></b><span>Gráfica y moderna. Buscás por lo que querés mejorar.</span></figcaption>
+    <figcaption><a href="c-nn.html"><b>C · N/N</b><span>Gráfica y moderna. Buscás por lo que querés mejorar.</span></a></figcaption>
     <iframe src="c-nn.html" title="Dirección C"></iframe>
   </figure>
 </div>
